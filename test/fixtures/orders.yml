@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment_type: MyString
+  date: 2016-11-13
+  status: 1
+  total: 9.99
+  customer: one
+
+two:
+  payment_type: MyString
+  date: 2016-11-13
+  status: 1
+  total: 9.99
+  customer: two
