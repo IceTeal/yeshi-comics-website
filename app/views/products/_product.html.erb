@@ -1,0 +1,8 @@
+<div class="product">
+	<h2><%=product.name%></h2>
+	<div>
+		<%=image_tag(product.image, size: "240x180") %>
+	</div>
+	<p><strong>Description:</strong><%=product.description%></p>
+	<p><strong>Price:</strong>$<%=sprintf "%.2f", product.price%></p>
+</div>

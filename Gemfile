@@ -31,6 +31,9 @@ gem 'devise'
 #CarrierWaveUploader Gem
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
+#Bootstrap Gem
+gem 'bootstrap', '~> 4.0.0.alpha5'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

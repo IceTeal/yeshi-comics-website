@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YeshiComicsWebsite</title>
+    <title>Yeshi Comics</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <header>
+      <h1>Yeshi Comics</h1>
+    </header>
+    <div id="menu">
+      <ul>
+        <li>Home</li>
+        <li><%= link_to 'Products', products_path %></li>
+        <li>Categories</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li><%= link_to 'Search', search_path %></li>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>

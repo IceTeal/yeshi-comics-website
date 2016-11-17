@@ -1,0 +1,5 @@
+<h2>Search Results for '<%= params[:search_keywords] %>'</h2>
+<% if @found_products.empty? %>
+<p>No results found</p>
+<% end %>
+<%= render @found_products %>
