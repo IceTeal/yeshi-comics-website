@@ -1,4 +1,4 @@
-<h2>Search Results for '<%= params[:search_keywords] %>'</h2>
+<h2>Search Results for keywords: '<%= params[:search_keywords] %>' category: <%= Category.where(:id => params[:category_id]).first.name %> </h2>
 <% if @found_products.empty? %>
 <p>No results found</p>
 <% end %>

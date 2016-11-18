@@ -7,7 +7,7 @@ class Product < ApplicationRecord
 
   mount_uploader :image, ProductUploader
 
-  def self.keyword_search(search)
-    where("name LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%") 
+  def self.keyword_search(search, category)
+    where("category_id = #{category} AND (name LIKE ? OR description LIKE ?)", "%#{search}%", "%#{search}%") 
   end
 end

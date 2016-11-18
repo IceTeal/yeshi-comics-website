@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def search_results #Displays search results.
-    @found_products = Product.keyword_search(params[:search_keywords])
+    @found_products = Product.keyword_search(params[:search_keywords], params[:category_id])
   end
 
   def show
