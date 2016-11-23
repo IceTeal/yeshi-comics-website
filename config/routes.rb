@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+
   root to: 'products#index'
   get 'about_us' => 'pages#about_us', as: 'about_us'
   get 'contact' => 'pages#contact', as: 'contact'
@@ -9,9 +12,6 @@ Rails.application.routes.draw do
 
   get 'search' => 'products#search', as: 'search'
   get 'search_results' => 'products#search_results', as: 'search_results'
-
-  #get 'about_us' => 'page#about_us', as 'about_us'
-  #get 'contact' => 'pages#contact', as 'contact'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
