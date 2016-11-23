@@ -1,5 +1,12 @@
-<h2>Search Results for keywords: '<%= params[:search_keywords] %>' category: <%= Category.where(:id => params[:category_id]).first.name %> </h2>
+<h3>Search Results for keywords: '<%= params[:search_keywords] %>' category: <%= Category.where(:id => params[:category_id]).first.name %> </h3>
 <% if @found_products.empty? %>
 <p>No results found</p>
 <% end %>
-<%= render @found_products %>
+<br/>
+<% @found_products.each_slice(2) do |products| %>
+<div class="row">
+  <% products.each do |product| %>
+    <%= render "product_row", product: product, order_item: @order_item %>
+  <% end %>
+</div>
+<% end %>

@@ -10,9 +10,11 @@ class ProductsController < ApplicationController
 
   def search_results #Displays search results.
     @found_products = Product.keyword_search(params[:search_keywords], params[:category_id])
+    @order_item = current_order.order_items.new
   end
 
   def show
   	@product = Product.find(params[:id]) # Find the product with the primary key mentioned in the URL.
+    @order_item = current_order.order_items.new
   end
 end
