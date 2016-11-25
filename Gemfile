@@ -34,6 +34,9 @@ gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 #Bootstrap Gem
 gem 'bootstrap', '~> 4.0.0.alpha5'
 
+#Bootstrap Select Gem
+gem 'bootstrap-select-rails'
+
 #FontAwesome Gem
 gem 'font-awesome-sass'
 

@@ -1,11 +1,18 @@
 <h3 class="text-center">Products</h3>
 
-<% @products.each_slice(2) do |products| %>
-<div class="row">
+<%= form_tag search_results_path, method: 'get' do %>
+  <%= text_field_tag :search_keywords %>
+
+  <% category_array = Category.all.map { |category| [category.name, category.id] } %>
+  
+  <%= select_tag(:category_id, options_for_select(category_array)) %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<br/>
+<% @products.each_slice(3) do |products| %>
+  <div class="row">
   <% products.each do |product| %>
     <%= render "product_row", product: product, order_item: @order_item %>
   <% end %>
-</div>
-<br/>
-<br/>
+ </div>
 <% end %>

@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= retuire bootstrap
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-select
+

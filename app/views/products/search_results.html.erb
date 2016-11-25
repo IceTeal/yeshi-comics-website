@@ -1,12 +1,20 @@
 <h3>Search Results for keywords: '<%= params[:search_keywords] %>' category: <%= Category.where(:id => params[:category_id]).first.name %> </h3>
+<%= form_tag search_results_path, method: 'get' do %>
+  <% category_array = Category.all.map { |category| [category.name, category.id] } %>
+  
+  <%= select_tag(:category_id, options_for_select(category_array)) %>
+  <%= submit_tag "Search" %>
+<% end %>
 <% if @found_products.empty? %>
 <p>No results found</p>
 <% end %>
 <br/>
-<% @found_products.each_slice(2) do |products| %>
-<div class="row">
-  <% products.each do |product| %>
-    <%= render "product_row", product: product, order_item: @order_item %>
-  <% end %>
+<% @found_products.each_slice(3) do |products| %>
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+    <% products.each do |product| %>
+      <%= render "product_row", product: product, order_item: @order_item %>
+    <% end %>
+  </div>
 </div>
 <% end %>
