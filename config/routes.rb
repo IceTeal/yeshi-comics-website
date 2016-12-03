@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :charges, only: [:new, :create]
 
   root to: 'products#index'
   get 'about_us' => 'pages#about_us', as: 'about_us'
