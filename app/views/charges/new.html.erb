@@ -5,8 +5,26 @@
   	  	<p><%= flash[:error] %></p>
   	  </div>
   	<% end %>
+    <h2>Order Confirmation</h2>
+    <table class="table">
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+      <% current_order.order_items.each do |order_item| %>
+        <tr>
+          <td><%= order_item.product.name%></td>
+          <td><%= order_item.quantity%></td>
+          <td><%= number_to_currency(order_item.product.price) %></td>
+          <td><%= number_to_currency(order_item.product.price * order_item.quantity) %></td>
+        </tr>
+      <% end %>
+    </table>
+
   	<label class="amount">
-  	  <span>Amount: <%= number_to_currency(@amount / 100) %></span>
+  	  <span>Total Amount: <%= number_to_currency(@amount / 100) %></span>
   	</label>
   </article>
 
