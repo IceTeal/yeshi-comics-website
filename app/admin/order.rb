@@ -1,6 +1,3 @@
 ActiveAdmin.register Order do
-
-permin_params: :total, :status, :customer, :total
-
-
+	permit_params :total, :status, :customer_id
 end
