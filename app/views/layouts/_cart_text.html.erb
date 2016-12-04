@@ -1,6 +1,6 @@
 <%= link_to cart_path, class: "btn btn-link" do %>
 
 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-<%= "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} ) " %>
+<%= "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total / 100} ) " %>
 
 <% end %>
