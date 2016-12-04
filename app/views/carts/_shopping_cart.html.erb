@@ -13,13 +13,16 @@
   </p>
 <% else %>
 <h3 class="text-center">Products</h3>
-
+  <div class="row">
+    <h4 class= "col-xs-2">Total: <%=number_to_currency current_order.total / 100%></h4>
+    <%= button_to "Check-Out", new_charge_path, :class => "col-xs-2 btn btn-primary", :method => :get %>
+  </div>    
+  </br>
   <% @order_items.each_slice(3) do |order_items| %>
     <div class="row">
       <% order_items.each do |order_item| %>
         <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
       <% end %>
     </div>
-    <h3>Total: <%=number_to_currency order_items.first.order.total%></h3>
   <% end %> 
 <% end %>
