@@ -5,7 +5,7 @@ class Order < ApplicationRecord
 
 
   def total
-  	order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0}.sum
+  	order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0}.sum * 100
   end
 
 private
