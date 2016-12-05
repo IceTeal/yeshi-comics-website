@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123161116) do
+ActiveRecord::Schema.define(version: 20161205022040) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -88,12 +88,13 @@ ActiveRecord::Schema.define(version: 20161123161116) do
   create_table "orders", force: :cascade do |t|
     t.string   "payment_type"
     t.date     "date"
-    t.integer  "status"
     t.decimal  "total"
     t.integer  "customer_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "order_status_id"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
   end
 
   create_table "pages", force: :cascade do |t|
