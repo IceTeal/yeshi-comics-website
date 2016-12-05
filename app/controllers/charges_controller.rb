@@ -20,16 +20,13 @@ class ChargesController < ApplicationController
 
         @customer = Customer.new
 
-
 		@response_data = @stripe_customer.sources.first
-
 
         @customer.first_name = @response_data.name
         @customer.email = @stripe_customer.email
         @customer.address = "#{@response_data.address_line1}, #{@response_data.address_city}, #{@response_data.address_state}"
-
+        @customer.post_code = @response_data.adress_zip
         @customer.save
-
 
 		@order.payment_type = "Stripe"
 		@order.status = 2
