@@ -14,6 +14,10 @@ class OrderItem < ApplicationRecord
     unit_price * quantity
   end
 
+  def to_s
+    "Order: #{order_id}, Product: #{product.name}"
+  end
+
 private
   def product_present
     if product.nil?
